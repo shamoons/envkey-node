@@ -200,6 +200,7 @@ function fetch(keyOrCbOrOpts, optsOrCb, maybeCb) {
         try {
             console.log(filePath)
             console.log(execArgs)
+            console.log('File Exists', fs.existsSync(path))
             var res = execFileSync(filePath, execArgs).toString()
             console.log('res', res)
 
