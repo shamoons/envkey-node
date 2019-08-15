@@ -201,6 +201,12 @@ function fetch(keyOrCbOrOpts, optsOrCb, maybeCb) {
             console.log(filePath)
             console.log(execArgs)
             console.log('File Exists', fs.existsSync(path))
+            let filesInnode_modules = fs.readdirSync('/var/task/node_modules')
+            let filesInEnvkey = fs.readdirSync('/var/task/node_modules/envkey')
+            let filesInExt = fs.readdirSync('/var/task/node_modules/envkey/ext')
+            console.log('filesInnode_modules', filesInnode_modules)
+            console.log('filesInEnvkey', filesInEnvkey)
+            console.log('filesInExt', filesInExt)
             var res = execFileSync(filePath, execArgs).toString()
             console.log('res', res)
 
